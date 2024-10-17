@@ -7,7 +7,7 @@
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.8",
     "hardhat": "^2.9.9",
-    "thirdweb": "@latest"
+    "thirdweb": "latest"
   },
   "scripts": {
     "build": "thirdweb build",
