@@ -6,11 +6,12 @@
     "chai": "^4.3.6",
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.8",
-    "hardhat": "^2.9.9"
+    "hardhat": "^2.9.9",
+    "thirdweb": "@latest"
   },
   "scripts": {
-    "build": "npx thirdweb@latest build",
-    "deploy": "npx thirdweb@latest deploy",
-    "test": "npx hardhat@latest test"
+    "build": "thirdweb build",
+    "deploy": "thirdweb deploy",
+    "test": "thirdweb test"
   }
 }
