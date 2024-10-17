@@ -5,14 +5,14 @@ contract Greeter {
     string private greeting1;
 
     constructor(string memory _greeting) {
-        greeting1 = _greeting;
+        greeting2 = _greeting;
     }
 
     function greet() public view returns (string memory) {
-        return greeting1;
+        return greeting2;
     }
 
     function setGreeting(string memory _greeting) public {
-        greeting1 = _greeting;
+        greeting2 = _greeting;
     }
 }
