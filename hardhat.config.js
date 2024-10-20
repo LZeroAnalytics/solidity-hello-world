@@ -1,14 +1,20 @@
 require("@nomiclabs/hardhat-waffle");
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-  const accounts = await hre.ethers.getSigners();
+task("deploy", "Deploys the contract to a custom network")
+  .addParam("contract", "The contract name to deploy")
+  .setAction(async (taskArgs, hre) => {
+    const { contract } = taskArgs;
+    const [deployer] = await hre.ethers.getSigners();
 
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
+    console.log("Deploying contract with the account:", deployer.address);
+    console.log("Account balance:", (await deployer.getBalance()).toString());
+
+    // Get the contract factory and deploy
+    const ContractFactory = await hre.ethers.getContractFactory(contract);
+    const deployedContract = await ContractFactory.deploy("Hello World");
+
+    console.log("Contract deployed to address:", deployedContract.address);
+  });
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -18,4 +24,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    lzero: {
+      url: "https://el-1-geth-lighthouse-87b84a11-175d-4dcc.lzeroanalytics.com/rpc",
+      accounts: [
+        "bcdf20249abf0ed6d944c0288fad489e33f66b3960d9e6229c1cd214ed3bbe31",
+      ],
+    },
+  },
 };
