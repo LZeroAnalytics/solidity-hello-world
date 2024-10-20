@@ -2,7 +2,7 @@
 pragma solidity ^0.8.4;
 
 contract Greeter {
-    string private greeting1;
+    string private greeting2;
 
     constructor(string memory _greeting) {
         greeting2 = _greeting;
