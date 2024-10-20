@@ -26,7 +26,7 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
     lzero: {
-      url: "https://el-1-geth-lighthouse-87b84a11-175d-4dcc.lzeroanalytics.com/rpc",
+      url: "https://el-1-geth-lighthouse-4e5c7d0b-be6a-4061.lzeroanalytics.com/rpc",
       accounts: [
         "bcdf20249abf0ed6d944c0288fad489e33f66b3960d9e6229c1cd214ed3bbe31",
       ],
