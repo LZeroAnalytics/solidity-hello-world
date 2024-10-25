@@ -11,7 +11,7 @@ task("deploy", "Deploys the contract to a custom network")
 
     // Get the contract factory and deploy
     const ContractFactory = await hre.ethers.getContractFactory(contract);
-    const deployedContract = await ContractFactory.deploy("Hi World");
+    const deployedContract = await ContractFactory.deploy("Hello World");
 
     console.log("Contract deployed to address:", deployedContract.address);
   });
